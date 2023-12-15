@@ -214,14 +214,14 @@ func (conf *Conf) setDefaults() {
 	conf.AuthMethods = AuthMethods{headers.AuthBasic}
 
 	// RTMP
-	conf.RTMP = true
+	conf.RTMP = false
 	conf.RTMPAddress = ":1935"
 	conf.RTMPSAddress = ":1936"
 	conf.RTMPServerKey = "server.key"
 	conf.RTMPServerCert = "server.crt"
 
 	// HLS
-	conf.HLS = true
+	conf.HLS = false
 	conf.HLSAddress = ":8888"
 	conf.HLSServerKey = "server.key"
 	conf.HLSServerCert = "server.crt"
@@ -233,7 +233,7 @@ func (conf *Conf) setDefaults() {
 	conf.HLSAllowOrigin = "*"
 
 	// WebRTC
-	conf.WebRTC = true
+	conf.WebRTC = false
 	conf.WebRTCAddress = ":8889"
 	conf.WebRTCServerKey = "server.key"
 	conf.WebRTCServerCert = "server.crt"
@@ -245,9 +245,10 @@ func (conf *Conf) setDefaults() {
 	conf.WebRTCICEServers2 = []WebRTCICEServer{}
 
 	// SRT
-	conf.SRT = true
+	conf.SRT = false
 	conf.SRTAddress = ":8890"
 
+	conf.OptionalPaths = map[string]*OptionalPath{"all_others": nil}
 	conf.PathDefaults.setDefaults()
 }
 

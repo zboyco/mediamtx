@@ -8,9 +8,10 @@ import (
 )
 
 func main() {
-	s, ok := core.New(os.Args[1:])
+	s, ok := core.New(nil)
 	if !ok {
 		os.Exit(1)
 	}
+
 	s.Wait()
 }
